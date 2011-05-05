@@ -1,0 +1,117 @@
+Introduction
+============
+
+Information relevant to development of Roto Game, a web based game that runs on
+Google App Engine.
+
+
+Getting started
+===============
+
+* To enable debug mode, edit "/main.py":
+
+    debug = True
+
+  Debug mode should be disabled before deploying the application.
+
+* For initializing the database, browse the following URL path, relative to the
+  root URL of the project. This functionality is only available in debug mode.
+  Beware: This may delete existing data, e.g. entries in the top players lists.
+
+    /admin/update
+
+
+Conventions
+===========
+
+* Coordinates in "piece space" are measured in piece positions on the board.
+  The left most piece position is 0, the second left mose is 1, etc..
+
+* Coordinates and dimensions in "piece space" are usually postfixed by the
+  letter p (upper or lower case).
+
+
+Deployment
+==========
+
+* Follow the instructions below to create a so called custom Dojo build,
+  located in:
+
+    /javascript/dojotoolkit
+
+  One reason for using a custom build is that there is a bug which affects FF3,
+  which Felix experienced in 2009 when connected via T-Mobile Germany UMTS:
+  
+    <http://www.dojotoolkit.com/forum/dojo-foundation/general-discussion/
+    firefox-3-fires-domcontentloaded-event-prematurely>
+
+  In a nutshell, it seems that Dojo requires seem to be evaluated before some
+  initialization is finished. For example, Felix saw FF3 requesting the
+  following invalid resource:
+  
+    http://rotogame.appspot.com/games/undefined../dojox/gfx.js
+  
+  How to create the build:
+
+  1. Run the following command in the dojo "buildscripts" directory:
+
+      build.bat profile=rotogame action=clean,release optimize=shrinksafe
+
+    Location of that directory:
+
+      /source/dojo-release-1.3.0-src/util/buildscripts
+
+    The resulting build is located in:
+
+      /source/dojo-release-1.3.0-src/release
+  
+  2. Update at least the file "rotogame.js" in the directory
+    "/javascript/dojotoolkit/dojo", and maybe also the file "dojo.js" in the
+    same directory.
+
+* Tasks recommended before deployment:
+
+  - Validate HTML.
+
+  - Test with popular browsers: Firefox, Chrome, Opera, Safari, IE6, IE7, IE8
+
+  - Test with images turned off in Firefox.
+
+  - Test with JavaScript turned off in Firefox.
+  
+  - Test via a mobile connection (with image compression) with IE8 and Firefox.
+
+  
+Images
+======
+
+GIF images exported from XARA should have transparency set. Otherwise, when
+viewed via a T-Mobile Germany UMTS connection with image compression, some
+unwanted color may turn transparent (as of 2009-June).
+
+
+Legal
+=====
+
+Copyright 2009, 2011 Felix E. Klee <felix.klee@inka.de>
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+-- 
+The following settings are interpreted by EMACS, do not remove them.
+Local Variables:
+mode:text
+fill-column:79
+coding: utf-8
+End:
+Local IspellDict: american
+LocalWords: URL

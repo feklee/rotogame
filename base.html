@@ -1,0 +1,58 @@
+{%comment%}
+  Copyright 2009, 2011 Felix E. Klee <felix.klee@inka.de>
+
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not
+  use this file except in compliance with the License. You may obtain a copy of
+  the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  License for the specific language governing permissions and limitations under
+  the License.
+{%endcomment%}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:vml="urn:schemas-microsoft-com:vml">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="author" content="Felix E. Klee"/>
+    <meta name="email" content="felix.klee@inka.de"/>
+    <?import namespace="v" implementation="#default#VML"?>
+    <style type="text/css">
+        v\:shape {
+            display:inline-block
+        }
+    </style>
+    <link rel="stylesheet" href="/stylesheets/base.css"/>
+    {%block head%}{%endblock%}
+    <script type="text/javascript">
+        // Specifying baseUrl is necessary to work around the problem that
+        // module paths are not correctly initialized when being connected 
+        // via T-Mobile Germany UMTS (as of 2009-Jun).
+        var djConfig = {
+            isDebug: {{is_debug}},
+            baseUrl: '/javascript/dojotoolkit/dojo/',
+            parseOnLoad: true
+        };
+    </script>
+    <script type="text/javascript" src="/javascript/dojotoolkit/dojo/dojo.js"></script>
+    <script type="text/javascript" src="/javascript/dojotoolkit/dojo/rotogame.js"></script>
+    <script type="text/javascript" src="/javascript/base.js"></script>
+    {%block script%}{%endblock%}
+</head>
+
+<body>
+    <noscript>
+        <p>Roto Game needs JavaScript!</p>
+    </noscript>
+    {%block body%}{%endblock%}
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+{%comment%}
+  Copyright 2009, 2011 Felix E. Klee <felix.klee@inka.de>
+
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not
+  use this file except in compliance with the License. You may obtain a copy of
+  the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  License for the specific language governing permissions and limitations under
+  the License.
+{%endcomment%}
+
+{%extends "base.html"%}
+
+{%block head%}
+    <title>Roto Game {{board_id}}</title>        
+    <link rel="stylesheet" href="/stylesheets/game.css"/>
+    <!--[if IE 6]>
+        <link rel="stylesheet" href="/stylesheets/game_ie6.css"/>
+    <![endif]-->
+{%endblock%}
+
+{%block script%}
+    <script type="text/javascript" src="/javascript/game.js"></script>
+    <script type="text/javascript">
+        var game = new Game({{board_id}});
+        dojo.addOnLoad(function() {
+            game.show();
+        });
+    </script>
+{%endblock%}
+
+{%block body%}
+    <table id="previewAndInteractive">
+        <tr>
+            <td id="preview2"><a href="/" id="preview"></a></td>
+            <td rowspan="2" id="interactive"></td>
+        </tr>
+        <tr><td id="status"><img id="statusImg" src="/images/go.gif" 
+            alt=""/></td></tr>
+    </table>
+    
+    <div id="topPlayersStatus">
+        <h1>Top Players</h1>
+        <p>Number of rotations: <span id="nRotations">0</span></p>
+        <div id="topPlayers"></div>
+    </div>
+{%endblock%}

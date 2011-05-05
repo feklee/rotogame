@@ -1,0 +1,93 @@
+/* Copyright 2009, 2011 Felix E. Klee <felix.klee@inka.de>
+
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not
+  use this file except in compliance with the License. You may obtain a copy of
+  the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  License for the specific language governing permissions and limitations under
+  the License. */
+
+#previewAndInteractive {
+    margin: 4px 8px 8px 7px;
+    float: left;
+    visibility: hidden;
+}
+
+#status {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+#statusImg {
+    vertical-align: bottom;
+}
+
+#preview2 {
+    vertical-align: top;
+    padding-right: 1px;
+}
+
+#preview {
+    float: right;
+    cursor: pointer;
+}
+
+#interactive {
+    vertical-align: top;
+    cursor: default;
+}
+
+#topPlayersStatus {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #666666;
+}
+    
+#topPlayersStatus {
+    padding-top: 8px;
+    visibility: hidden;
+    margin-left: 8px;
+}
+
+#topPlayersStatus h1 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+#topPlayers table {
+    margin-top: 5px;
+}
+
+#topPlayers td {
+    white-space: nowrap;
+}
+
+#topPlayers .position {
+    padding-right: 5px;
+    text-align: right;
+}
+
+#topPlayers .saving {
+}
+
+#topPlayers .failed {
+    color: red;
+    font-style: italic;
+}
+
+#nameField {
+    border-bottom: 1px solid gray;
+    margin-right: 5px;
+}
+
+#preview:hover  {
+    background-color: yellow;
+}
