@@ -72,9 +72,9 @@ Deployment
 
             /source/dojo-release-$version-src/release
 
-      2. Update the files in, using the newly built versions:
+     2. Update the files in, using the newly built versions:
 
-             /javascript/dojotoolkit/dojo
+            /javascript/dojotoolkit/dojo
 
   * Tasks recommended before deployment:
 
